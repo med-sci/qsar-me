@@ -1,0 +1,3 @@
+add enviroment.yaml
+Add docker file
+gunicorn

@@ -1,0 +1,1 @@
+COc1ccc2c(c1F)C(=O)N(C[C@@]1(C#Cc3cccnc3C)NC(=O)NC1=O)C2, CCN1CCN(Cc2ccc(C#C[C@]3(CN4Cc5ccc(OC)cc5C4=O)NC(=O)NC3=O)cc2)CC1, COc1ccc2c(c1)C(=O)N(C[C@@]1(C#Cc3ccc(C4(C)NC(=O)NC4=O)c(F)c3)NC(=O)NC1=O)C2, COc1ccc2c(c1F)C(=O)N(C[C@@]1(C#Cc3ccc(-c4nc(-c5cccnc5)ccc4O)cc3)NC(=O)NC1=O)C2, COc1cccc2c1ncc1c(=O)n(-c3cccc(Cl)c3)c(=O)n(C3CCNCC3)c12
