@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import fields
 from rest_framework.fields import ReadOnlyField
-from .models import ModelProperties, Pharmacophore
+from .models import ModelProperties, Pharmacophore, ResultModel
 from rest_framework.serializers import ModelSerializer, ValidationError
 from rdkit import Chem
 
@@ -32,10 +32,17 @@ class PharmacophoreSerializer(ModelSerializer):
     class Meta:
         model = Pharmacophore
         fields = [
-            'id',
             'model', 
             'label',
             'x',
             'y',
             'z'
+        ]
+
+class ResultSerializer(ModelSerializer):
+    class Meta:
+        model = ResultModel
+        fields = [
+            'model',
+            's3_url'
         ]

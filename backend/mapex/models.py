@@ -12,8 +12,9 @@ class ModelProperties(models.Model):
     mutation_chance = models.FloatField()
     generations = models.IntegerField()
     use_crippen = models.BooleanField(default=False)
+    distance = models.IntegerField(default=1)
+
     email = models.EmailField()
-    link = models.URLField()
 
     def __str__(self):
         return f'model-{self.pk}'
@@ -24,6 +25,11 @@ class Pharmacophore(models.Model):
     x = models.FloatField()
     y = models.FloatField()
     z = models.FloatField()
+
+class ResultModel(models.Model):
+    model = models.ForeignKey(ModelProperties, on_delete=models.CASCADE)
+    s3_url = models.URLField()
+    
 
 
 

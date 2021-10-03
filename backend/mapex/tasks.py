@@ -1,5 +1,5 @@
 from mapex.geneticAlgorithm import GA
-from mapex.models import ModelProperties
+from mapex.models import ModelProperties, Pharmacophore, ResultModel
 from mapex.pharmacophore import PharmComplex 
 
 def run_ga(id):
@@ -16,8 +16,21 @@ def run_ga(id):
     mols = ga.get_molecules()
     chromosome = ga.best_chromosome
     ga.write(mols, chromosome, ga._model_id)
-    obj.link = f'https://mapex-test.s3.amazonaws.com/molecules_{obj.id}.sdf'
+    link = f'https://mapex-test.s3.amazonaws.com/molecules_{obj.id}.sdf' #add to env
     p = PharmComplex(mols, chromosome)
-    pharmacophore = p.create()
+    p.create(distance=obj.distance)
+    coords = p.get_coords()
+    for key,value in coords.items():
+        if value != []:
+            for coord in value:
+                pharmacophore = Pharmacophore(
+                    model=obj, 
+                    label=key, 
+                    x=coord[0],
+                    y=coord[1],
+                    z=coord[2])
+                pharmacophore.save()
+    result = ResultModel(model = obj, s3_url=link)
+    result.save()
     
     

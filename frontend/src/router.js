@@ -7,6 +7,6 @@ export default
         history: createWebHistory(),
         routes: [
             {path:'/', component: Home},
-            {path:'/report', component: Report},
+            {path:'/report/:id', component: Report},
         ]
     })

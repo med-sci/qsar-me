@@ -3,7 +3,9 @@
         <div class="container-fluid">
             <div class="row ">
                 <div class="col-12 bg-dark hero-div">
-                    <h1 class="display-2 text-light text-center h-2"> Pharmacophore report card</h1>
+                    <h1 class="display-2 text-light text-center h-2"> Pharmacophore report card 
+                        {{ $route.params.id }}
+                    </h1>
                 </div>
             </div>
         </div>
@@ -11,7 +13,7 @@
             <div class="row">
                 <div class="col-12" 
                     id="mol-col" 
-                    style="height: 250px; width:1000px; position: relative; margin: auto;">
+                    style="height: 400px; width:1000px; position: relative; margin: auto;">
                 </div>
                 <div class="col-12 py-3">
                     <p>
@@ -33,6 +35,7 @@
 </template>
 
 <script>
+import getPharmacophore from './pharmacophore'
     export default {
         methods:{
         },
@@ -41,13 +44,14 @@
             recaptchaScript.setAttribute('src', 'https://3Dmol.org/build/3Dmol-min.js')
             document.head.appendChild(recaptchaScript)
             require('./pharmacophore')
+            getPharmacophore(this.$route.params.id)
         }
     }
 </script>
 
 <style scoped>
 .hero-div{
-    height: 250px;
+    height: 200px;
 }
 .ngl{
     height: 250px;
