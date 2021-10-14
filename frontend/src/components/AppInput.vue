@@ -1,6 +1,6 @@
 <template>
     <section class="bg-light text-light">
-        <div class="container-md py-3 bg-dark">
+        <div class="container-md py-3 bg-light text-dark">
             <div class="row justify-content-center align-items-top">
                 <div class="col-12 col-md-7">
                     <h3 class="display-6 ">{{titles[idx]}}</h3>

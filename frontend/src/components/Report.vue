@@ -11,24 +11,17 @@
         </div>
         <div class="container-md"> 
             <div class="row">
-                <div class="col-12" 
+                <div class="col-md-7 col-sm-12" 
                     id="mol-col" 
-                    style="height: 400px; width:1000px; position: relative; margin: auto;">
+                    style="height: 400px; width:750px; position: relative;">
                 </div>
-                <div class="col-12 py-3">
+                <div class="col-md-4 col-sm-12 py-3">
                     <p>
                     Thank u for using qsar.me! 
                     <br>U could download aligned molecules and pharmacophore data
                     </p>
+                    <button class="btn btn-success" >download molecules</button>
                 </div>
-                <div class="row">
-                    <div class="col-6">
-                        <button class="btn btn-success" >download molecules</button>
-                    </div>
-                    <div class="col-6">
-                        <button class="btn btn-success" >download molecules</button>
-                    </div>
-            </div>
             </div>
         </div>
     </section>

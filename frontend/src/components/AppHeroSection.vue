@@ -5,7 +5,6 @@
                 <div class="col-12 align-self-center text-center">
                     <h3 class="display-3"> Welcome to </h3>
                     <h1 class="display-1 fw-bold">QSAR.ME</h1>
-                    <hr class="w-100">
                     <p class="fs-5 display-1">A free pharmacophore building tool. 
                         <br> Build your pharmacophore easy, only SMILES information required</p>
                 </div>

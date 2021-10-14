@@ -13,7 +13,6 @@ class ModelProperties(models.Model):
     generations = models.IntegerField()
     use_crippen = models.BooleanField(default=False)
     distance = models.IntegerField(default=1)
-
     email = models.EmailField()
 
     def __str__(self):

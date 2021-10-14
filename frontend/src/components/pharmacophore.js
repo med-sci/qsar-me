@@ -24,7 +24,7 @@ function create3Dmodel(id, pharmacophore){
                     }})
                     s.wireframe = wireframe
                 }
-                v.zoom(5,1000)
+                v.zoom(3,1000)
                 v.render()
             })
         })

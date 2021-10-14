@@ -135,6 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
+#S3 settings
+
 AWS_S3_ACCESS_KEY_ID = env('AWS_S3_ACCESS_KEY_ID') 
 AWS_S3_SECRET_ACCESS_KEY = env('AWS_S3_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'mapex-test'
@@ -144,3 +146,19 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8080",
     "http://192.168.100.26:8080"
 ]
+
+#redis settings
+REDIS_HOST = '0.0.0.0' # add to environ
+REDIS_PORT = '6379'
+CELERY_BROKER_URL = 'redis://' + REDIS_HOST + ':' + REDIS_PORT +'/0'
+CELERY_RESULT_BACKEND = 'redis://' + REDIS_HOST + ':' + REDIS_PORT +'/0'
+CELERY_ACCEPT_COMTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+#email settings 
+EMAIL_HOST = env('EMAIL_HOST') 
+EMAIL_HOST_USER = env('EMAIL_HOST_USER') 
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD') 
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

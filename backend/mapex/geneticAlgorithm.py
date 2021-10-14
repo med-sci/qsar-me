@@ -4,6 +4,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem, rdMolDescriptors, PyMol, SDWriter
 from rdkit.six import StringIO
 import random
+from loguru import logger
 from statistics import stdev
 from statistics import mean
 from pathlib import Path
@@ -159,7 +160,7 @@ class GA:
             population = self.__order_population(population)
             self._cache_population(population)
             if self.verbose:
-                print(f'chromosome {population[0].chromosome} with score {population[0].score}')
+                logger.info(f'Chromosome with score {population[0].score} created')
             population = self.__crossover(population)
             population = [population[0]] + [
                 self.__mutation(chromosome, self._mut_chance)
@@ -168,7 +169,7 @@ class GA:
         population = [self.__fitness(chromosome) for chromosome in population]
         population = self.__order_population(population)
         if self.verbose:
-            print(f'chromosome {population[0].chromosome} with score {population[0].score}')
+            logger.info(f'chromosome with score {population[0].score} created')
         self.population = population
         self.best_chromosome = population[0].chromosome
 
